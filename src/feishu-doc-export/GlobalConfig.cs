@@ -13,6 +13,8 @@ namespace feishu_doc_export
 
         public static string ExportPath { get; set; } 
 
+        public static string ApiEndpoint { get; set; } 
+
         public static string WikiSpaceId { get; set; }
 
         public static string CloudDocFolder { get; set; } 
@@ -60,7 +62,7 @@ namespace feishu_doc_export
         {
             License license = new License();
             // 加载本地密钥
-            license.SetLicense("C:\\Users\\User\\Desktop\\Aspose.lic");
+            license.SetLicense("/private/tmp/License.lic");
         }
 
         /// <summary>
@@ -78,6 +80,10 @@ namespace feishu_doc_export
                 WikiSpaceId = GetCommandLineArg(args, "--spaceId=", true);
                 DocSaveType = GetCommandLineArg(args, "--saveType=", true);
                 ExportPath = GetCommandLineArg(args, "--exportPath=");
+                ApiEndpoint = GetCommandLineArg(args, "--apiEndpoint=");
+                if (string.IsNullOrWhiteSpace(ExportPath)) {
+                    ApiEndpoint = FeiShuConsts.DefaultOpenApiEndPoint;
+                }
                 Quit = args.Contains("--quit");
             }
             else

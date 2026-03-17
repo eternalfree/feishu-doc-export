@@ -130,7 +130,7 @@ namespace feishu_doc_export.HttpApi
 
         public async Task<PagedResult<WikiNodeItemDto>> GetWikiNodeList(string spaceId, string pageToken = null, string parentNodeToken = null)
         {
-            StringBuilder urlBuilder = new StringBuilder($"{FeiShuConsts.OpenApiEndPoint}/open-apis/wiki/v2/spaces/{spaceId}/nodes?page_size=50");// page_size=50
+            StringBuilder urlBuilder = new StringBuilder($"{FeiShuConsts.DefaultOpenApiEndPoint}/open-apis/wiki/v2/spaces/{spaceId}/nodes?page_size=50");// page_size=50
             if (!string.IsNullOrWhiteSpace(pageToken))
             {
                 urlBuilder.Append($"&page_token={pageToken}");
@@ -383,7 +383,7 @@ namespace feishu_doc_export.HttpApi
 
         public async Task<PagedResult<CloudDocDto>> GetCloudDocList(string folderToken = null, string pageToken = null)
         {
-            StringBuilder urlBuilder = new StringBuilder($"{FeiShuConsts.OpenApiEndPoint}/open-apis/drive/v1/files?folder_token={folderToken}&page_size=50");// page_size=50
+            StringBuilder urlBuilder = new StringBuilder($"{FeiShuConsts.DefaultOpenApiEndPoint}/open-apis/drive/v1/files?folder_token={folderToken}&page_size=50");// page_size=50
             if (!string.IsNullOrWhiteSpace(pageToken))
             {
                 urlBuilder.Append($"&page_token={pageToken}");

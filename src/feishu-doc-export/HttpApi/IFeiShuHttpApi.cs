@@ -10,7 +10,7 @@ using WebApiClientCore.Attributes;
 
 namespace feishu_doc_export.HttpApi
 {
-    [HttpHost(FeiShuConsts.OpenApiEndPoint)]
+    [HttpHost(FeiShuConsts.DefaultOpenApiEndPoint)]
     public interface IFeiShuHttpApi : IHttpApi
     {
         /// <summary>

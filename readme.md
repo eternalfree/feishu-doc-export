@@ -87,6 +87,7 @@
   --type            知识库（wiki）或个人空间云文档（cloudDoc）（可选值：cloudDoc、wiki，为空则默认为wiki）.
   --saveType        文档导出的文件类型（可选值：docx、md、pdf，为空或其他非可选值则默认为docx）.
   --folderToken     当type为个人空间云文档时，该项必填.
+  --apiEndpoint     可以指定 API 的路径，如https://open.larksuite.com ，以支持Lark 环境
 ```
 
 - win环境
